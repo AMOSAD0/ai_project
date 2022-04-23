@@ -1,6 +1,21 @@
- String stcR='A';
-  String stcB='A';
-  String stcY='A';
+ import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+ // String stcR='A';
+ // String stcB='A';
+  //String stcY='A';
+  bool fAy=true;
+  bool fBy=true;
+  bool fCy=true;
+  bool fAb=true;
+  bool fBb=true;
+  bool fCb=true;
+  bool fAr=true;
+  bool fBr=true;
+  bool fCr=true;
+  Color R =Colors.red;
+  Color B =Colors.blue;
+  Color Y =Colors.yellow;
    bool selectR=false;
    bool selectB=false;
    bool selectY=false;
@@ -10,50 +25,66 @@
     double dircBy=0.22;
     double dircYx =-0.9;
     double dircYy=0.16;
+    Map stat={
+      'stcR':'A',
+       'stcB':'A',
+       'stcY':'A',
+    };
+     Map g ={
+       'stcR':'A',
+       'stcB':'A',
+       'stcY':'C',
+};
     //===========================================
     moveB(){
     if(selectY==true){
-      if(stcB=='B'&& stcR=='B'){
+      if( stat['stcB']=='B'&& stat['stcR']=='B'){
       dircYy=0.16;
       dircYx=0;
-      stcY='B';
+       stat['stcY']='B';
       selectY=false;
+      Y=Colors.yellow;
       }
-      else if(stcB=='B'|| stcR=='B'){
+      else if( stat['stcB']=='B'||  stat['stcR']=='B'){
         dircYy=0.22;
         dircYx=0;
-        stcY='B';
+        stat['stcY']='B';
       selectY=false;
+      Y=Colors.yellow;
       }
       else{
       dircYy=0.28;
       dircYx=0;
-      stcY='B';
+      stat['stcY']='B';
       selectY=false;
+      Y=Colors.yellow;
       }
      // dircYx=0;
       //selectY=false;
     }
     else if(selectB==true){
-      if(stcY!='B'&&stcR=='B'&&stcY!=stcB){
+      if(stat['stcY']!='B'&& stat['stcR']=='B'&&stat['stcY']!= stat['stcB']){
         dircBx=0;
         dircBy=0.22;
-        stcB='B';
+         stat['stcB']='B';
       selectB=false;
+      B=Colors.blue;
       }
-      else if(stcY!='B'&&stcY!=stcB){
+      else if(stat['stcY']!='B'&&stat['stcY']!= stat['stcB']){
          dircBx=0;
         dircBy=0.28;
-        stcB='B';
+         stat['stcB']='B';
       selectB=false;
+       B=Colors.blue;
       }
       
     }
     else if(selectR==true){
-      if((stcY!=stcR&&stcB!=stcR)&&stcY!='B'&&stcB!='B'){
+      if((stat['stcY']!= stat['stcR']&& stat['stcB']!= stat['stcR'])&&stat['stcY']!='B'&& stat['stcB']!='B'){
         dircRx=0;
-        stcR='B';
+         stat['stcR']='B';
       selectR=false;
+      R=Colors.red;
       }
       
     }
@@ -62,45 +93,51 @@
   //------------CCCCC//
   moveC(){
     if(selectY==true){
-      if(stcB=='C'&& stcR=='C' && stcY=='B'){
+      if( stat['stcB']=='C'&&  stat['stcR']=='C' && stat['stcY']=='B'){
       dircYy=0.16;
       dircYx=0.9;
-      stcY='C';
+      stat['stcY']='C';
       selectY=false;
+      Y=Colors.yellow;
       }
-      else if(stcB=='C'|| stcR=='C'&& stcY=='B'){
+      else if( stat['stcB']=='C'||  stat['stcR']=='C'&& stat['stcY']=='B'){
         dircYy=0.22;
         dircYx=0.9;
-        stcY='C';
+        stat['stcY']='C';
       selectY=false;
+       Y=Colors.yellow;
       }
-      else if(stcY=='B'){
+      else if(stat['stcY']=='B'){
       dircYy=0.28;
       dircYx=0.9;
-      stcY='C';
+      stat['stcY']='C';
       selectY=false;
+       Y=Colors.yellow;
       }
     }
     else if(selectB==true){
-      if(stcY!='C'&&stcR=='C'&&stcY!=stcB&& stcB=='B'){
+      if(stat['stcY']!='C'&& stat['stcR']=='C'&&stat['stcY']!= stat['stcB']&&  stat['stcB']=='B'){
         dircBx=0.95;
         dircBy=0.22;
-        stcB='C';
+         stat['stcB']='C';
       selectB=false;
+      B=Colors.blue;
       }
-      else if(stcY!='C'&&stcY!=stcB&& stcB=='B'){
+      else if(stat['stcY']!='C'&&stat['stcY']!= stat['stcB']&&  stat['stcB']=='B'){
          dircBx=0.95;
         dircBy=0.28;
-        stcB='C';
+         stat['stcB']='C';
       selectB=false;
+      B=Colors.blue;
       }
       
     }
     else if(selectR==true){
-      if(stcY!=stcR&&stcB!=stcR&&stcY!='C'&&stcB!='C'&& stcR=='B'){
+      if(stat['stcY']!= stat['stcR']&& stat['stcB']!= stat['stcR']&&stat['stcY']!='C'&& stat['stcB']!='C'&&  stat['stcR']=='B'){
         dircRx=1;
-        stcR='C';
+         stat['stcR']='C';
       selectR=false;
+      R=Colors.red;
       }
       
     }
@@ -109,45 +146,51 @@
   //=====================AAAAAA============//
    moveA(){
     if(selectY==true){
-      if(stcB=='A'&& stcR=='A' && stcY=='B'){
+      if( stat['stcB']=='A'&&  stat['stcR']=='A' && stat['stcY']=='B'){
       dircYy=0.16;
       dircYx=-0.9;
-      stcY='A';
+      stat['stcY']='A';
       selectY=false;
+      Y=Colors.yellow;
       }
-      else if(stcB=='A'|| stcR=='A'&& stcY=='B'){
+      else if( stat['stcB']=='A'||  stat['stcR']=='A'&& stat['stcY']=='B'){
         dircYy=0.22;
         dircYx=-0.9;
-        stcY='A';
+        stat['stcY']='A';
       selectY=false;
+      Y=Colors.yellow;
       }
-      else if(stcY=='B'){
+      else if(stat['stcY']=='B'){
       dircYy=0.28;
       dircYx=-0.9;
-      stcY='A';
+      stat['stcY']='A';
       selectY=false;
+      Y=Colors.yellow;
       }
     }
     else if(selectB==true){
-      if(stcY!='A'&&stcR=='A'&&stcY!=stcB&& stcB=='B'){
+      if(stat['stcY']!='A'&& stat['stcR']=='A'&&stat['stcY']!= stat['stcB']&&  stat['stcB']=='B'){
         dircBx=-0.95;
         dircBy=0.22;
-        stcB='A';
+         stat['stcB']='A';
       selectB=false;
+      B=Colors.blue;
       }
-      else if(stcY!='A'&&stcY!=stcB&& stcB=='B'){
+      else if(stat['stcY']!='A'&&stat['stcY']!= stat['stcB']&&  stat['stcB']=='B'){
          dircBx=-0.95;
         dircBy=0.28;
-        stcB='A';
+         stat['stcB']='A';
       selectB=false;
+      B=Colors.blue;
       }
       
     }
     else if(selectR==true){
-      if(stcY!=stcR&&stcB!=stcR&&stcY!='A'&&stcB!='A'&& stcR=='B'){
+      if(stat['stcY']!= stat['stcR']&& stat['stcB']!= stat['stcR']&&stat['stcY']!='A'&& stat['stcB']!='A'&&  stat['stcR']=='B'){
         dircRx=-1;
-        stcR='A';
+         stat['stcR']='A';
       selectR=false;
+      R=Colors.red;
       }
       
     }

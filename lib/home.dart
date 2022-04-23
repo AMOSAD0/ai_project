@@ -1,4 +1,5 @@
-import 'dart:async';
+
+import 'package:ai_project/Node.dart';
 import 'package:ai_project/const.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -13,10 +14,29 @@ class HomePag extends StatefulWidget {
 class _HomePagState extends State<HomePag> {
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       body: Stack(
        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Positioned(
+            top: 8.h,
+            right: 1.w,
+            child: InkWell(
+              onTap: (){
+                setState(() {
+                  bfs( 
+                  g
+                  );
+                });
+              },
+              child: Container(
+                height: 5.h,
+                width: 5.w,
+                color: Colors.black,
+              ),
+            ),
+          ),
         Positioned(
           top: 35.h,
           left: 5.w,
@@ -132,15 +152,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectR=true;
+                 setState(() {
+                   selectR=true;
                  selectB=false;
                  selectY=false;
+                 R=Colors.red.shade300;
+                 B=Colors.blue;
+                 Y=Colors.yellow;
                  print(selectR);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 25.w,
-                 color: Colors.red,
+                   color: R,   
                ),
              ) ,
           ),
@@ -151,15 +177,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectB=true;
+                 setState(() {
+                   selectB=true;
+                  B=Colors.blue.shade300;
+                  R=Colors.red;
+                  Y=Colors.yellow;
                  selectR=false;
                  selectY=false;
                  print(selectB);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 20.w,
-                 color: Colors.blue,
+                 color: B,
                ),
              ) ,
           ),
@@ -170,15 +202,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectY=true;
+                 setState(() {
+                   selectY=true;
+                   Y=Colors.yellow.shade300;
+                   R=Colors.red;
+                   B=Colors.blue;
                  selectB=false;
                  selectR=false;
                  print(selectY);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 15.w,
-                 color: Colors.yellow,
+                 color: Y,
                ),
              ) ,
           ),
