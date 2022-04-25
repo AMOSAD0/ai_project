@@ -10,7 +10,7 @@ class MoveCubit extends Cubit<productStats>{
   MoveCubit() : super(loading());
 
       moveB(){
-
+emit(loading());
     if(selectY==true){
       if( stat['stcB']=='B'&& stat['stcR']=='B'){
       dircYy=0.16;
@@ -18,7 +18,8 @@ class MoveCubit extends Cubit<productStats>{
        stat['stcY']='B';
       selectY=false;
       Y=Colors.yellow;
-      Timer(Duration(milliseconds: 500),() => print('Hollle'));
+      emit(loading());
+      
       }
       else if( stat['stcB']=='B'||  stat['stcR']=='B'){
         dircYy=0.22;
@@ -26,7 +27,7 @@ class MoveCubit extends Cubit<productStats>{
         stat['stcY']='B';
       selectY=false;
       Y=Colors.yellow;
-      Timer(Duration(milliseconds: 500),() => print('Hollle'));
+      emit(loading());
       }
       else{
       dircYy=0.28;
@@ -34,7 +35,7 @@ class MoveCubit extends Cubit<productStats>{
       stat['stcY']='B';
       selectY=false;
       Y=Colors.yellow;
-      Timer(Duration(milliseconds: 500),() => print('Hollle'));
+      emit(loading());
       }
      // dircYx=0;
       //selectY=false;
