@@ -1,6 +1,10 @@
+import 'dart:async';
 import 'dart:collection';
+import 'dart:io';
 
 import 'package:ai_project/const.dart';
+import 'package:ai_project/cubit.dart';
+import 'package:ai_project/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
@@ -66,10 +70,11 @@ class Node{
 
 
 
-st(map){
+ st(map){
 if(map['stcY']=='A'&&fBy==true){
   selectY=true;
-  moveB();
+   // moveB();
+   MoveCubit().moveB();
   fAy=false;
   fBy=false;
   fCy=true;
@@ -87,7 +92,6 @@ else if(stat['stcY']=='B'&&fAy==true){
 else if(stat['stcY']=='B'&&fCy==true){
   selectY=true;
   moveC();
-  
   fAy=true;
   fBy=false;
   fCy=false;
