@@ -1,4 +1,5 @@
- import 'package:flutter/cupertino.dart';
+ import 'package:ai_project/home.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
  // String stcR='A';
@@ -36,7 +37,8 @@ import 'package:flutter/material.dart';
        'stcY':'C',
 };
     //===========================================
-    moveB(){
+       moveB(){
+         
     if(selectY==true){
       if( stat['stcB']=='B'&& stat['stcR']=='B'){
       dircYy=0.16;
