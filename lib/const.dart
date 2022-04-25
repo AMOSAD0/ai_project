@@ -148,14 +148,14 @@ import 'package:flutter/material.dart';
   //=====================AAAAAA============//
    moveA(){
     if(selectY==true){
-      if( stat['stcB']=='A'&&  stat['stcR']=='A' && stat['stcY']=='B'){
+      if( stat['stcB']=='A'&& stat['stcR']=='A'&& stat['stcY']=='B'){
       dircYy=0.16;
       dircYx=-0.9;
       stat['stcY']='A';
       selectY=false;
       Y=Colors.yellow;
       }
-      else if( stat['stcB']=='A'||  stat['stcR']=='A'&& stat['stcY']=='B'){
+      else if( (stat['stcB']=='A'||  stat['stcR']=='A')&& stat['stcY']=='B'){
         dircYy=0.22;
         dircYx=-0.9;
         stat['stcY']='A';
